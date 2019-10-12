@@ -1,0 +1,902 @@
+
+==
+== Aug 25 13:40:46 
+== program: /usr/sbin/soe_map
+== command: thread apply all where full
+==
+
+Thread 1 (Thread 0x7fe8cba45780 (LWP 24033)):
+#0  0x00007fe8cb2fe687 in __GI___waitpid (pid=24117, stat_loc=stat_loc@entry=0x7fff40083488, options=options@entry=0) at ../sysdeps/unix/sysv/linux/waitpid.c:30
+        resultvar = 18446744073709551104
+        sc_ret = <optimized out>
+#1  0x00007fe8cb269067 in do_system (line=<optimized out>) at ../sysdeps/posix/system.c:149
+        __result = <optimized out>
+        _buffer = {__routine = 0x7fe8cb269360 <cancel_handler>, __arg = 0x7fff4008348c, __canceltype = 0, __prev = 0x0}
+        _avail = 1
+        status = 1074279548
+        save = <optimized out>
+        pid = 24117
+        sa = {__sigaction_handler = {sa_handler = 0x1, sa_sigaction = 0x1}, sa_mask = {__val = {65536, 0 <repeats 15 times>}}, sa_flags = 0, sa_restorer = 0x0}
+        omask = {__val = {16386, 8254314803964088320, 2097152, 140734269765568, 140637825681192, 24033, 140734269765136, 140637817532383, 206158430256, 140734267667976, 140734267667760, 8254314803964088320, 140734267667916, 140734269765136, 140637821232368, 140637825681192}}
+        __cnt = <optimized out>
+        __set = <optimized out>
+#2  0x000055d0f6be3e58 in gdb_cmd (cmd=0x55d0f6be7f5f "thread apply all where full") at ../lib/logger.c:692
+        time_str = "Aug 25 13:40:46 ", '\000' <repeats 200 times>...
+        cmd_str = <error reading variable cmd_str (value requires 2097152 bytes, which is more than max-value-size)>
+        ti = 1535204446
+        tm = {tm_sec = 46, tm_min = 40, tm_hour = 13, tm_mday = 25, tm_mon = 7, tm_year = 118, tm_wday = 6, tm_yday = 236, tm_isdst = 0, tm_gmtoff = 0, tm_zone = 0x55d0f881b720 "UTC"}
+        __func__ = "gdb_cmd"
+#3  0x000055d0f6be3efc in dump_stack_frames () at ../lib/logger.c:706
+No locals.
+#4  0x000055d0f6be414f in soe_backtrace () at ../lib/logger.c:757
+        addrs = {0x55d0f6be3f35 <soe_backtrace+55>, 0x55d0f6bdbfe4 <crash_handler+125>, 0x7fe8cb61d890 <__restore_rt>, 0x7fe8cb61c741 <__libc_connect+17>, 0x55d0f6be1219 <connect_to+699>, 0x55d0f6bd8e82 <soe_connect+230>, 0x55d0f6bdcbd7 <main+1792>, 0x7fe8cb23bb97 <__libc_start_main+231>, 0x55d0f6bd815a <_start+42>, 0x0, 0x7fff40284030, 0x7fff40283f70, 0x0 <repeats 36 times>, 0x7fff402839c0, 0x7fff40283dc0, 0x7fff402839c0, 0x400, 0x30, 0x0 <repeats 26 times>, 0x7fe8cb83b754 <_dl_name_match_p+84>, 0x0, 0x7fe8cba484f0, 0x2, 0x7fe8cb834f5f <do_lookup_x+3359>, 0x7fe8cba529f0 <_rtld_global+2448>, 0x0, 0x0, 0x7fe8cb83b754 <_dl_name_match_p+84>, 0x10a96a5, 0x7fe8cb3cf8c7, 0x7fff40284090, 0x7fff402840a0, 0x3, 0x55d0f8819260, 0x1, 0x7fe8cb2759aa <_IO_vfprintf_internal+1562>, 0x216f6d7, 0x7fe800000000, 0x7fe8cb3cf8c9, 0x7fe800000000, 0x0, 0x1, 0xffffffffffffffff, 0x100000000, 0x7fff0000000a, 0x7fff40284056, 0x7fe800000000, 0x7fe8cb834f5f <do_lookup_x+3359>, 0x7fe8cba484f0, 0x7fe800000000, 0x0, 0x7fe8cb22b9d0, 0xf7803b, 0x7fe8cb230614, 0x7fe8cb220f00, 0x7fe8cb21ba6c, 0x2, 0x55d000000000, 0x7fff40283cd0, 0x7fff00000003, 0x7fff40283cc0, 0x55d000000000, 0x7fe8cba48a48, 0x0, 0x4, 0x7fe8cba484f0, 0x55d0f6be7deb, 0x3de00ec7, 0x7fe8cba48848, 0x7fff40283d68, 0x7fe8cba48db0, 0x7fe8cba484f0, 0x0, 0x7fe8cb8351ef <_dl_lookup_symbol_x+319>, 0x2, 0x7fe8cba48db0, 0x1, 0x0, 0x1, 0x7fe8cba484f0, 0x7fe8cb230614, 0x1cb839e20, 0x7fff40283cc0, 0x7fff40283cd0, 0x7fe8cba48848, 0x0, 0x55d0f6be7dea, 0x0, 0xffffffff, 0x7fe8cb839ec3 <_dl_fixup+211>, 0x7fe8cb220f00, 0x7fe8cba484f0, 0x7fe8cb2ab6c0 <ptmalloc_init>, 0x7fe8cb82a5b8, 0x7fff402840a0, 0x7fe8cb84170a <_dl_runtime_resolve_xsave+138>, 0x7fe8cb605ca0 <main_arena+96>, 0x7fe8cb606460 <main_arena+2080>, 0x7fe8cb2aad60 <_dl_tunable_set_mallopt_check>, 0x7fe8cb605038, 0x7fff40284190, 0x7fe8cb601ee0 <_IO_mem_jumps>, 0xffffffffffffef28, 0x0, 0x55d0f6be7ddf, 0x7fe8cb839ec3 <_dl_fixup+211>, 0x1, 0x0, 0x0, 0x7fe8cb220f00, 0x7fff40284120, 0x7fe8cb84170a <_dl_runtime_resolve_xsave+138>, 0xd68, 0x780, 0x7fe8cb601760 <_IO_helper_jumps>, 0x38, 0x55d0f88194b0, 0x0, 0x0, 0x7000000101, 0x8, 0x1, 0x0, 0xffff00001f80, 0x7fff40283e20, 0x7fff40283e20, 0x7fff40283f50, 0x55d0f881c74b, 0x55d0f881c74b, 0x7fff40284074, 0x7fe8cb3cf204, 0x7fe8cb29b79d <_IO_vsscanf+125>, 0x55d0fbad8001, 0x55d0f881c74c, 0x55d0f881c74c, 0x55d0f881c74b, 0x55d0f881c74b, 0x55d0f881c74b, 0x55d0f881c74b, 0x55d0f881c74b, 0x2525252525252525, 0x2525252525252525, 0x0, 0xff0000, 0x0, 0x0, 0x7fe8cb605c30 <__malloc_hook>, 0x7fe8cb605c30 <__malloc_hook>, 0xe, 0xe, 0x0, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x400000004, 0x400000004, 0x697020726567676f, 0x6174732064252064, 0x0 <repeats 14 times>, 0x7fff40283f70, 0x7fff402841a0, 0x7fe8cb602b40 <_nl_C_LC_TIME>, 0x7fff40284167, 0x55d0f881b720, 0x2, 0x7fff00000002, 0x7fff40284074, 0x0, 0x7fe8cb2eea88 <__tzfile_read+824>, 0x8, 0x1007fe800000001, 0x2, 0x0 <repeats 20 times>...}
+        i = 9
+        n = 9
+        __func__ = "soe_backtrace"
+#5  0x000055d0f6bdbfe4 in crash_handler (signo=6, info=0x7fff40285af0, context=0x7fff402859c0) at client.c:1303
+        __func__ = "crash_handler"
+#6  <signal handler called>
+No locals.
+#7  0x00007fe8cb61c741 in __libc_connect (fd=8, addr=..., len=16) at ../sysdeps/unix/sysv/linux/connect.c:26
+        resultvar = 18446744073709551612
+        sc_ret = <optimized out>
+#8  0x000055d0f6be1219 in connect_to (name=0x7fff40289782 "192.168.1.246", port=5000) at ../lib/net.c:190
+        buf = "5000", '\000' <repeats 59 times>
+        hbuf = "192.168.1.246", '\000' <repeats 443 times>...
+        sbuf = "5000", '\000' <repeats 27 times>
+        fd = 8
+        ret = 0
+        hints = {ai_flags = 0, ai_family = 0, ai_socktype = 1, ai_protocol = 0, ai_addrlen = 0, ai_addr = 0x0, ai_canonname = 0x0, ai_next = 0x0}
+        res = 0x55d0f8840800
+        res0 = 0x55d0f8840800
+        linger_opt = {l_onoff = 1, l_linger = 0}
+        err_cnt = 0
+        __func__ = "connect_to"
+#9  0x000055d0f6bd8e82 in soe_connect (servername=0x7fff40289782 "192.168.1.246", localline=8, remoteline=0) at client.c:314
+        ret = 7
+        i = -155320829
+        sr = {idx = -155330106, sockfd = 21968}
+        linger_opt = {l_onoff = 1, l_linger = 0}
+        h_soe = 0x55d0f88404c0
+        __func__ = "soe_connect"
+#10 0x000055d0f6bdcbd7 in main (argc=8, argv=0x7fff40287778) at client.c:1667
+        h_soe = 0x0
+        daemonize = false
+        long_options = 0x55d0f6dec840 <lopts>
+        short_options = 0x55d0f6dec720 <sopts> "t:p:r:l:hf"
+        fd = {0, 0}
+        kfd = <optimized out>
+        i = 8
+        off = 48
+        cmdline = "/usr/sbin/soe_map -p 8 -r 0 -t 192.168.1.246 -f ", '\000' <repeats 207 times>
+        logdir_st = {st_dev = 0, st_ino = 0, st_nlink = 0, st_mode = 0, st_uid = 0, st_gid = 0, __pad0 = 0, st_rdev = 0, st_size = 0, st_blksize = 0, st_blocks = 0, st_atim = {tv_sec = 0, tv_nsec = 0}, st_mtim = {tv_sec = 0, tv_nsec = 0}, st_ctim = {tv_sec = 0, tv_nsec = 0}, __glibc_reserved = {0, 0, 0}}
+        ch = -1
+        longindex = 0
+        ret = 0
+        log_dst_type = LOG_DST_DEFAULT
+        localport = 8
+        remoteport = 0
+        targetip = 0x7fff40289782 "192.168.1.246"
+        log_path = "/var/log/soe_port8.log", '\000' <repeats 930 times>...
+        __func__ = "main"
+
+==
+== Aug 25 13:40:47 
+== program: /usr/sbin/soe_map
+== command: p __sys
+==
+$1 = {status = 0}
+
+==
+== Aug 25 13:40:48 
+== program: /usr/sbin/soe_map
+== command: thread apply all where full
+==
+
+Thread 1 (Thread 0x7f863a876780 (LWP 24131)):
+#0  0x00007f863a12f687 in __GI___waitpid (pid=24159, stat_loc=stat_loc@entry=0x7ffee24e1f88, options=options@entry=0) at ../sysdeps/unix/sysv/linux/waitpid.c:30
+        resultvar = 18446744073709551104
+        sc_ret = <optimized out>
+#1  0x00007f863a09a067 in do_system (line=<optimized out>) at ../sysdeps/posix/system.c:149
+        __result = <optimized out>
+        _buffer = {__routine = 0x7f863a09a360 <cancel_handler>, __arg = 0x7ffee24e1f8c, __canceltype = 0, __prev = 0x0}
+        _avail = 1
+        status = -498196612
+        save = <optimized out>
+        pid = 24159
+        sa = {__sigaction_handler = {sa_handler = 0x1, sa_sigaction = 0x1}, sa_mask = {__val = {65536, 0 <repeats 15 times>}}, sa_flags = 0, sa_restorer = 0x0}
+        omask = {__val = {16386, 3199075351210935040, 2097152, 140732697289408, 140214484293416, 24131, 140732697288976, 140214476144607, 206158430256, 140732695191816, 140732695191600, 3199075351210935040, 140732695191756, 140732697288976, 140214479844592, 140214484293416}}
+        __cnt = <optimized out>
+        __set = <optimized out>
+#2  0x0000564e649a1e58 in gdb_cmd (cmd=0x564e649a5f5f "thread apply all where full") at ../lib/logger.c:692
+        time_str = "Aug 25 13:40:48 ", '\000' <repeats 200 times>...
+        cmd_str = <error reading variable cmd_str (value requires 2097152 bytes, which is more than max-value-size)>
+        ti = 1535204448
+        tm = {tm_sec = 48, tm_min = 40, tm_hour = 13, tm_mday = 25, tm_mon = 7, tm_year = 118, tm_wday = 6, tm_yday = 236, tm_isdst = 0, tm_gmtoff = 0, tm_zone = 0x564e66489720 "UTC"}
+        __func__ = "gdb_cmd"
+#3  0x0000564e649a1efc in dump_stack_frames () at ../lib/logger.c:706
+No locals.
+#4  0x0000564e649a214f in soe_backtrace () at ../lib/logger.c:757
+        addrs = {0x564e649a1f35 <soe_backtrace+55>, 0x564e64999fe4 <crash_handler+125>, 0x7f863a44e890 <__restore_rt>, 0x7f863a44d741 <__libc_connect+17>, 0x564e6499f219 <connect_to+699>, 0x564e64996e82 <soe_connect+230>, 0x564e6499abd7 <main+1792>, 0x7f863a06cb97 <__libc_start_main+231>, 0x564e6499615a <_start+42>, 0x0, 0x0, 0x0, 0x0, 0x3000000020, 0x7ffee26e2b50, 0x7ffee26e2a90, 0x0 <repeats 36 times>, 0x7ffee26e24e0, 0x7ffee26e28e0, 0x7ffee26e24e0, 0x400, 0x30, 0x0 <repeats 22 times>, 0x7f863a66c754 <_dl_name_match_p+84>, 0x0, 0x7f863a8794f0, 0x2, 0x7f863a665f5f <do_lookup_x+3359>, 0x7f863a8839f0 <_rtld_global+2448>, 0x0, 0x0, 0x7f863a65b6f0, 0x10a96a5, 0x7f863a05e31a, 0x7f863a04ef90, 0x7f863a65b338, 0x7f8600000005, 0x7f863a2008c7, 0x7ffee26e2bb0, 0x7ffee26e2bc0, 0x3, 0x564e66487260, 0x1, 0x7f863a0a69aa <_IO_vfprintf_internal+1562>, 0x7f863a8839f0 <_rtld_global+2448>, 0x7f8600000000, 0x7f863a2008c9, 0x7f8600000000, 0x0, 0x1, 0xffffffffffffffff, 0x100000000, 0x7f860000000a, 0x7ffee26e2b76, 0x7ffe00000000, 0xc, 0x2, 0x0, 0x7f8600000000, 0x7f863a665f5f <do_lookup_x+3359>, 0x7f863a8794f0, 0x7f863a883920 <_rtld_global+2240>, 0x7f863a2008c9, 0x7f863a05c9d0, 0xf7803b, 0x7f863a061614, 0x7f863a051f00, 0x7f863a04ca6c, 0x2, 0x564e00000000, 0x7ffee26e2810, 0x7f8600000003, 0x7ffee26e2800, 0x0, 0x7f863a879a48, 0x0, 0x4, 0x7f863a8794f0, 0xffffffffffffffff, 0x3de00ec7, 0x7f863a879848, 0x7ffee26e28a8, 0x7f863a879db0, 0x7f863a8794f0, 0x0, 0x7f863a6661ef <_dl_lookup_symbol_x+319>, 0x2, 0x7f863a879db0, 0x1, 0x0, 0x1, 0x7f863a8794f0, 0x7f863a061614, 0x1649a5df6, 0x7ffee26e2800, 0x7ffee26e2810, 0x7f863a879848, 0x0, 0x7ffee26e2cb0, 0x0, 0xffffffff, 0x7f863a66aec3 <_dl_fixup+211>, 0x7f863a051f00, 0x7f863a8794f0, 0x0, 0x7f863a65b5b8, 0x7ffee26e2bc0, 0x7f863a67270a <_dl_runtime_resolve_xsave+138>, 0x7f863a436ca0 <main_arena+96>, 0x3000000010, 0x7ffee26e2e60, 0x7f863a436038, 0x7ffee26e2cb0, 0x7f863a432ee0 <_IO_mem_jumps>, 0xffffffffffffef28, 0x0, 0x564e649a5ddf, 0x7f863a66aec3 <_dl_fixup+211>, 0x1, 0x0, 0x633a439968, 0x7f863a051f00, 0x7ffee26e2c40, 0x7f863a67270a <_dl_runtime_resolve_xsave+138>, 0xd68, 0x780, 0x7f863a432760 <_IO_helper_jumps>, 0x38, 0x564e664874b0, 0x0, 0x0, 0x2c6566151ea2c300, 0x7ffee26e2940, 0x7ffee26e2940, 0x7ffee26e2a70, 0xffff00001f80, 0x564e6648a74b, 0x7ffee26e2b94, 0x7f863a200204, 0x7f863a0cc79d <_IO_vsscanf+125>, 0x564efbad8001, 0x564e6648a74c, 0x564e6648a74c, 0x564e6648a74b, 0x564e6648a74b, 0x564e6648a74b, 0x564e6648a74b, 0x564e6648a74b, 0x564e6648a74c, 0x0, 0x0, 0x0, 0x2525252525252525, 0x2525252525252525, 0x0, 0xff0000, 0x0, 0x0, 0x7f863a436c30 <__malloc_hook>, 0x7f863a436c30 <__malloc_hook>, 0xe, 0xe, 0x0, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x400000004, 0x400000004, 0x697020726567676f, 0x6174732064252064, 0x0 <repeats 14 times>, 0x564e66489720, 0x2...}
+        i = 9
+        n = 9
+        __func__ = "soe_backtrace"
+#5  0x0000564e64999fe4 in crash_handler (signo=6, info=0x7ffee26e45f0, context=0x7ffee26e44c0) at client.c:1303
+        __func__ = "crash_handler"
+#6  <signal handler called>
+No locals.
+#7  0x00007f863a44d741 in __libc_connect (fd=8, addr=..., len=16) at ../sysdeps/unix/sysv/linux/connect.c:26
+        resultvar = 18446744073709551612
+        sc_ret = <optimized out>
+#8  0x0000564e6499f219 in connect_to (name=0x7ffee26e6782 "192.168.1.246", port=5000) at ../lib/net.c:190
+        buf = "5000", '\000' <repeats 59 times>
+        hbuf = "192.168.1.246", '\000' <repeats 443 times>...
+        sbuf = "5000", '\000' <repeats 27 times>
+        fd = 8
+        ret = 0
+        hints = {ai_flags = 0, ai_family = 0, ai_socktype = 1, ai_protocol = 0, ai_addrlen = 0, ai_addr = 0x0, ai_canonname = 0x0, ai_next = 0x0}
+        res = 0x564e664ae800
+        res0 = 0x564e664ae800
+        linger_opt = {l_onoff = 1, l_linger = 0}
+        err_cnt = 0
+        __func__ = "connect_to"
+#9  0x0000564e64996e82 in soe_connect (servername=0x7ffee26e6782 "192.168.1.246", localline=8, remoteline=0) at client.c:314
+        ret = 7
+        i = 1687805443
+        sr = {idx = 1687796166, sockfd = 22094}
+        linger_opt = {l_onoff = 1, l_linger = 0}
+        h_soe = 0x564e664ae4c0
+        __func__ = "soe_connect"
+#10 0x0000564e6499abd7 in main (argc=8, argv=0x7ffee26e6298) at client.c:1667
+        h_soe = 0x0
+        daemonize = false
+        long_options = 0x564e64baa840 <lopts>
+        short_options = 0x564e64baa720 <sopts> "t:p:r:l:hf"
+        fd = {0, 0}
+        kfd = <optimized out>
+        i = 8
+        off = 48
+        cmdline = "/usr/sbin/soe_map -p 8 -r 0 -t 192.168.1.246 -f ", '\000' <repeats 207 times>
+        logdir_st = {st_dev = 0, st_ino = 0, st_nlink = 0, st_mode = 0, st_uid = 0, st_gid = 0, __pad0 = 0, st_rdev = 0, st_size = 0, st_blksize = 0, st_blocks = 0, st_atim = {tv_sec = 0, tv_nsec = 0}, st_mtim = {tv_sec = 0, tv_nsec = 0}, st_ctim = {tv_sec = 0, tv_nsec = 0}, __glibc_reserved = {0, 0, 0}}
+        ch = -1
+        longindex = 0
+        ret = 0
+        log_dst_type = LOG_DST_DEFAULT
+        localport = 8
+        remoteport = 0
+        targetip = 0x7ffee26e6782 "192.168.1.246"
+        log_path = "/var/log/soe_port8.log", '\000' <repeats 930 times>...
+        __func__ = "main"
+
+==
+== Aug 25 13:40:49 
+== program: /usr/sbin/soe_map
+== command: p __sys
+==
+$1 = {status = 0}
+
+==
+== Aug 25 13:40:50 
+== program: /usr/sbin/soe_map
+== command: thread apply all where full
+==
+
+Thread 1 (Thread 0x7ff673127780 (LWP 24173)):
+#0  0x00007ff6729e0687 in __GI___waitpid (pid=24201, stat_loc=stat_loc@entry=0x7ffe04c26a08, options=options@entry=0) at ../sysdeps/unix/sysv/linux/waitpid.c:30
+        resultvar = 18446744073709551104
+        sc_ret = <optimized out>
+#1  0x00007ff67294b067 in do_system (line=<optimized out>) at ../sysdeps/posix/system.c:149
+        __result = <optimized out>
+        _buffer = {__routine = 0x7ff67294b360 <cancel_handler>, __arg = 0x7ffe04c26a0c, __canceltype = 0, __prev = 0x0}
+        _avail = 1
+        status = 79849980
+        save = <optimized out>
+        pid = 24201
+        sa = {__sigaction_handler = {sa_handler = 0x1, sa_sigaction = 0x1}, sa_mask = {__val = {65536, 0 <repeats 15 times>}}, sa_flags = 0, sa_restorer = 0x0}
+        omask = {__val = {16386, 1953656874131614464, 2097152, 140728980368704, 140696469268264, 24173, 140728980368272, 140696461119455, 206158430256, 140728978271112, 140728978270896, 1953656874131614464, 140728978271052, 140728980368272, 140696464819440, 140696469268264}}
+        __cnt = <optimized out>
+        __set = <optimized out>
+#2  0x0000564a5c1c4e58 in gdb_cmd (cmd=0x564a5c1c8f5f "thread apply all where full") at ../lib/logger.c:692
+        time_str = "Aug 25 13:40:50 ", '\000' <repeats 200 times>...
+        cmd_str = <error reading variable cmd_str (value requires 2097152 bytes, which is more than max-value-size)>
+        ti = 1535204450
+        tm = {tm_sec = 50, tm_min = 40, tm_hour = 13, tm_mday = 25, tm_mon = 7, tm_year = 118, tm_wday = 6, tm_yday = 236, tm_isdst = 0, tm_gmtoff = 0, tm_zone = 0x564a5ca0f720 "UTC"}
+        __func__ = "gdb_cmd"
+#3  0x0000564a5c1c4efc in dump_stack_frames () at ../lib/logger.c:706
+No locals.
+#4  0x0000564a5c1c514f in soe_backtrace () at ../lib/logger.c:757
+        addrs = {0x564a5c1c4f35 <soe_backtrace+55>, 0x564a5c1bcfe4 <crash_handler+125>, 0x7ff672cff890 <__restore_rt>, 0x7ff672cfe741 <__libc_connect+17>, 0x564a5c1c2219 <connect_to+699>, 0x564a5c1b9e82 <soe_connect+230>, 0x564a5c1bdbd7 <main+1792>, 0x7ff67291db97 <__libc_start_main+231>, 0x564a5c1b915a <_start+42>, 0x0, 0x0, 0x3000000020, 0x7ffe04e275c0, 0x7ffe04e27500, 0x0 <repeats 36 times>, 0x7ffe04e26f50, 0x7ffe04e27350, 0x7ffe04e26f50, 0x400, 0x30, 0x0 <repeats 24 times>, 0x7ff672f1d754 <_dl_name_match_p+84>, 0x0, 0x7ff67312a4f0, 0x2, 0x7ff672f16f5f <do_lookup_x+3359>, 0x7ff6731349f0 <_rtld_global+2448>, 0x0, 0x0, 0x7ff672f1d754 <_dl_name_match_p+84>, 0x10a96a5, 0x7ff67312a4f0, 0x2, 0x7ff672ab18c7, 0x7ffe04e27620, 0x7ffe04e27630, 0x3, 0x564a5ca0d260, 0x1, 0x7ff6729579aa <_IO_vfprintf_internal+1562>, 0x7ff6728fff78, 0x7ff600000000, 0x7ff672ab18c9, 0x7ff600000000, 0x0, 0x1, 0xffffffffffffffff, 0x100000000, 0x7ff60000000a, 0x7ff672f16f5f <do_lookup_x+3359>, 0x7ff67312a4f0, 0xc, 0x2, 0x7ff67290d9d0, 0xf7803b, 0x7ff672912614, 0x7ff672902f00, 0x7ff6728fda6c, 0x7ff600000002, 0x0, 0x7ffe04e27250, 0x564a00000003, 0x7ffe04e27240, 0x7ffe00000000, 0x7ff67312aa48, 0x0, 0x4, 0x7ff67312a4f0, 0x7ffe04e27290, 0x3de00ec7, 0x7ff67312a848, 0x7ffe04e272e8, 0x7ff67312adb0, 0x7ff67312a4f0, 0x0, 0x7ff672f171ef <_dl_lookup_symbol_x+319>, 0x2, 0x7ff67312adb0, 0x1, 0x0, 0x1, 0x7ff67312a4f0, 0x7ff672912614, 0x100000000, 0x7ffe04e27240, 0x7ffe04e27250, 0x7ff67312a848, 0x0, 0xd68, 0x564a5c1c8df6, 0xffffffff, 0x0, 0x7ff672902f00, 0x7ff67312a4f0, 0x7ff67312a848, 0x0, 0x7ffe04e27630, 0x7ff672f2370a <_dl_runtime_resolve_xsave+138>, 0xffffffff, 0x7ff672ce8460 <main_arena+2080>, 0x7ff6729049a0, 0x7ff672ce7038, 0x7ffe04e27720, 0x7ff672ce3ee0 <_IO_mem_jumps>, 0xffffffffffffef28, 0x0, 0x564a5c1c8ddf, 0x7ff672f1bec3 <_dl_fixup+211>, 0x1, 0x0, 0x7ffe04e29a10, 0x7ff672902f00, 0x7ffe04e276b0, 0x7ff672f2370a <_dl_runtime_resolve_xsave+138>, 0xd68, 0x780, 0x7ff672ce3760 <_IO_helper_jumps>, 0x38, 0x564a5ca0d4b0, 0x0, 0x0, 0xffffffffffffef58, 0x40, 0x7000000101, 0x8, 0xffff00001f80, 0x0, 0x1b1cc8937b9d6b00, 0x7ffe04e273b0, 0x7ffe04e273b0, 0x7ffe04e274e0, 0x564a5ca1074b, 0x564a5ca1074b, 0x7ffe04e27604, 0x7ff672ab1204, 0x7ff67297d79d <_IO_vsscanf+125>, 0x564afbad8001, 0x564a5ca1074c, 0x564a5ca1074c, 0x564a5ca1074b, 0x564a5ca1074b, 0x564a5ca1074b, 0x2525252525252525, 0x2525252525252525, 0x0, 0xff0000, 0x0, 0x0, 0x7ff672ce7c30 <__malloc_hook>, 0x7ff672ce7c30 <__malloc_hook>, 0xe, 0xe, 0x0, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x400000004, 0x400000004, 0x697020726567676f, 0x6174732064252064, 0x0 <repeats 14 times>, 0x3000000010, 0x7ff6729d7623 <__strftime_internal+6179>, 0x7ffe04e27500, 0x7ffe04e27730, 0x7ff672ce4b40 <_nl_C_LC_TIME>, 0x7ffe04e276f7, 0x564a5ca0f720, 0x2, 0x7ffe00000002, 0x7ffe04e27604, 0x0, 0x7ff6729d0a88 <__tzfile_read+824>...}
+        i = 9
+        n = 9
+        __func__ = "soe_backtrace"
+#5  0x0000564a5c1bcfe4 in crash_handler (signo=6, info=0x7ffe04e29070, context=0x7ffe04e28f40) at client.c:1303
+        __func__ = "crash_handler"
+#6  <signal handler called>
+No locals.
+#7  0x00007ff672cfe741 in __libc_connect (fd=8, addr=..., len=16) at ../sysdeps/unix/sysv/linux/connect.c:26
+        resultvar = 18446744073709551612
+        sc_ret = <optimized out>
+#8  0x0000564a5c1c2219 in connect_to (name=0x7ffe04e2b782 "192.168.1.246", port=5000) at ../lib/net.c:190
+        buf = "5000", '\000' <repeats 59 times>
+        hbuf = "192.168.1.246", '\000' <repeats 443 times>...
+        sbuf = "5000", '\000' <repeats 27 times>
+        fd = 8
+        ret = 0
+        hints = {ai_flags = 0, ai_family = 0, ai_socktype = 1, ai_protocol = 0, ai_addrlen = 0, ai_addr = 0x0, ai_canonname = 0x0, ai_next = 0x0}
+        res = 0x564a5ca34800
+        res0 = 0x564a5ca34800
+        linger_opt = {l_onoff = 1, l_linger = 0}
+        err_cnt = 0
+        __func__ = "connect_to"
+#9  0x0000564a5c1b9e82 in soe_connect (servername=0x7ffe04e2b782 "192.168.1.246", localline=8, remoteline=0) at client.c:314
+        ret = 7
+        i = 1545342467
+        sr = {idx = 1545333190, sockfd = 22090}
+        linger_opt = {l_onoff = 1, l_linger = 0}
+        h_soe = 0x564a5ca344c0
+        __func__ = "soe_connect"
+#10 0x0000564a5c1bdbd7 in main (argc=8, argv=0x7ffe04e2ad08) at client.c:1667
+        h_soe = 0x0
+        daemonize = false
+        long_options = 0x564a5c3cd840 <lopts>
+        short_options = 0x564a5c3cd720 <sopts> "t:p:r:l:hf"
+        fd = {0, 0}
+        kfd = <optimized out>
+        i = 8
+        off = 48
+        cmdline = "/usr/sbin/soe_map -p 8 -r 0 -t 192.168.1.246 -f ", '\000' <repeats 207 times>
+        logdir_st = {st_dev = 0, st_ino = 0, st_nlink = 0, st_mode = 0, st_uid = 0, st_gid = 0, __pad0 = 0, st_rdev = 0, st_size = 0, st_blksize = 0, st_blocks = 0, st_atim = {tv_sec = 0, tv_nsec = 0}, st_mtim = {tv_sec = 0, tv_nsec = 0}, st_ctim = {tv_sec = 0, tv_nsec = 0}, __glibc_reserved = {0, 0, 0}}
+        ch = -1
+        longindex = 0
+        ret = 0
+        log_dst_type = LOG_DST_DEFAULT
+        localport = 8
+        remoteport = 0
+        targetip = 0x7ffe04e2b782 "192.168.1.246"
+        log_path = "/var/log/soe_port8.log", '\000' <repeats 930 times>...
+        __func__ = "main"
+
+==
+== Aug 25 13:40:50 
+== program: /usr/sbin/soe_map
+== command: p __sys
+==
+$1 = {status = 0}
+
+==
+== Aug 25 13:42:50 
+== program: /usr/sbin/soe_map
+== command: thread apply all where full
+==
+
+Thread 5 (Thread 0x7fae157e6700 (LWP 24078)):
+#0  0x00007fae175ce9d0 in __GI___nanosleep (requested_time=requested_time@entry=0x7fae157e4e30, remaining=remaining@entry=0x0) at ../sysdeps/unix/sysv/linux/nanosleep.c:28
+        resultvar = 18446744073709551100
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+#1  0x00007fae17601877 in usleep (useconds=<optimized out>) at ../sysdeps/posix/usleep.c:32
+        ts = {tv_sec = 0, tv_nsec = 500000000}
+#2  0x000055d9292efddd in soe_ping_thread (arg=0x55d92961e4c0) at client.c:640
+        h_soe = 0x55d92961e4c0
+        __func__ = "soe_ping_thread"
+#3  0x000055d9292f3c53 in thread_starter (arg=0x55d929621920) at ../lib/work.c:301
+        args = 0x55d929621920
+        ret = 0x0
+#4  0x00007fae178e26db in start_thread (arg=0x7fae157e6700) at pthread_create.c:463
+        pd = 0x7fae157e6700
+        now = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140385661642496, -2837393895444849596, 140385661636480, 0, 94391190559008, 140724318347168, 2865318186380024900, 2865312275158391876}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#5  0x00007fae1760b88f in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+No locals.
+
+Thread 4 (Thread 0x7fae15fe7700 (LWP 24077)):
+#0  0x00007fae178e8f85 in futex_abstimed_wait_cancelable (private=<optimized out>, abstime=0x7fae15fe59f0, expected=0, futex_word=0x55d92961e538) at ../sysdeps/unix/sysv/linux/futex-internal.h:205
+        __ret = -516
+        oldtype = 0
+        err = <optimized out>
+        oldtype = <optimized out>
+        err = <optimized out>
+        __ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __pthread_cond_wait_common (abstime=0x7fae15fe59f0, mutex=0x55d92961e540, cond=0x55d92961e510) at pthread_cond_wait.c:539
+        spin = 0
+        buffer = {__routine = 0x7fae178e8690 <__condvar_cleanup_waiting>, __arg = 0x7fae15fe5950, __canceltype = 40, __prev = 0x0}
+        cbuffer = {wseq = 0, cond = 0x55d92961e510, mutex = 0x55d92961e540, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = <optimized out>
+        seq = 0
+        private = <optimized out>
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        rt = <optimized out>
+        s = <optimized out>
+#2  __pthread_cond_timedwait (cond=0x55d92961e510, mutex=0x55d92961e540, abstime=0x7fae15fe59f0) at pthread_cond_wait.c:667
+No locals.
+#3  0x000055d9292ee55a in soe_cond_wait_timeout (cond=0x55d92961e510, mutex=0x55d92961e540, msec=1000) at /home/wangl40/workspace/soe/include/util.h:436
+        ret = <optimized out>
+        now = {tv_sec = 1535204569, tv_usec = 951556}
+        wait_time = {tv_sec = 1535204570, tv_nsec = 951556000}
+#4  0x000055d9292eff3e in soe_intr_thread (arg=0x55d92961e4c0) at client.c:666
+        ret = 110
+        cnt = 0
+        len = 0
+        rsp = {magic = 3420388028, seq = 0, opcode = 11 '\v', line = 0 '\000', readlen = 0, len = 0, flags = 0, result = 0}
+        h_soe = 0x55d92961e4c0
+        iocnt = {rxcnt = 3420388028, txcnt = 0, errwrite = 11, errread = 0, errothers = 0}
+        read_buf = '\000' <repeats 1023 times>
+        __func__ = "soe_intr_thread"
+#5  0x000055d9292f3c53 in thread_starter (arg=0x55d9296217a0) at ../lib/work.c:301
+        args = 0x55d9296217a0
+        ret = 0x0
+#6  0x00007fae178e26db in start_thread (arg=0x7fae15fe7700) at pthread_create.c:463
+        pd = 0x7fae15fe7700
+        now = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140385670035200, -2837393895444849596, 140385670029184, 0, 94391190558624, 140724318347168, 2865317087405268036, 2865312275158391876}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#7  0x00007fae1760b88f in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+No locals.
+
+Thread 3 (Thread 0x7fae167e8700 (LWP 24076)):
+#0  0x00007fae178e8f85 in futex_abstimed_wait_cancelable (private=<optimized out>, abstime=0x7fae167e6e20, expected=0, futex_word=0x55d92961ed40) at ../sysdeps/unix/sysv/linux/futex-internal.h:205
+        __ret = -516
+        oldtype = 0
+        err = <optimized out>
+        oldtype = <optimized out>
+        err = <optimized out>
+        __ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __pthread_cond_wait_common (abstime=0x7fae167e6e20, mutex=0x55d92961ed48, cond=0x55d92961ed18) at pthread_cond_wait.c:539
+        spin = 0
+        buffer = {__routine = 0x7fae178e8690 <__condvar_cleanup_waiting>, __arg = 0x7fae167e6d80, __canceltype = 0, __prev = 0x0}
+        cbuffer = {wseq = 248, cond = 0x55d92961ed18, mutex = 0x55d92961ed48, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = <optimized out>
+        seq = 124
+        private = <optimized out>
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        rt = <optimized out>
+        s = <optimized out>
+#2  __pthread_cond_timedwait (cond=0x55d92961ed18, mutex=0x55d92961ed48, abstime=0x7fae167e6e20) at pthread_cond_wait.c:667
+No locals.
+#3  0x000055d9292f3094 in soe_cond_wait_timeout (cond=0x55d92961ed18, mutex=0x55d92961ed48, msec=1000) at /home/wangl40/workspace/soe/include/util.h:436
+        ret = <optimized out>
+        now = {tv_sec = 1535204569, tv_usec = 951880}
+        wait_time = {tv_sec = 1535204570, tv_nsec = 951880000}
+#4  0x000055d9292f3681 in worker_routine (arg=0x55d92961ebd0) at ../lib/work.c:132
+        wi = 0x55d92961ebd0
+        work = 0x0
+        tid = 24076
+        __func__ = "worker_routine"
+#5  0x000055d9292f3c53 in thread_starter (arg=0x55d92961edd0) at ../lib/work.c:301
+        args = 0x55d92961edd0
+        ret = 0x0
+#6  0x00007fae178e26db in start_thread (arg=0x7fae167e8700) at pthread_create.c:463
+        pd = 0x7fae167e8700
+        now = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140385678427904, -2837393895444849596, 140385678421888, 0, 94391190547920, 140724318347072, 2865311590384000068, 2865312275158391876}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#7  0x00007fae1760b88f in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+No locals.
+
+Thread 2 (Thread 0x7fae16fe9700 (LWP 24062)):
+#0  0x00007fae178e8f85 in futex_abstimed_wait_cancelable (private=<optimized out>, abstime=0x7fae16fe7e20, expected=0, futex_word=0x55d92961e9c0) at ../sysdeps/unix/sysv/linux/futex-internal.h:205
+        __ret = -516
+        oldtype = 0
+        err = <optimized out>
+        oldtype = <optimized out>
+        err = <optimized out>
+        __ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __pthread_cond_wait_common (abstime=0x7fae16fe7e20, mutex=0x55d92961e9c8, cond=0x55d92961e998) at pthread_cond_wait.c:539
+        spin = 0
+        buffer = {__routine = 0x7fae178e8690 <__condvar_cleanup_waiting>, __arg = 0x7fae16fe7d80, __canceltype = 0, __prev = 0x0}
+        cbuffer = {wseq = 0, cond = 0x55d92961e998, mutex = 0x55d92961e9c8, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = <optimized out>
+        seq = 0
+        private = <optimized out>
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        rt = <optimized out>
+        s = <optimized out>
+#2  __pthread_cond_timedwait (cond=0x55d92961e998, mutex=0x55d92961e9c8, abstime=0x7fae16fe7e20) at pthread_cond_wait.c:667
+No locals.
+#3  0x000055d9292f3094 in soe_cond_wait_timeout (cond=0x55d92961e998, mutex=0x55d92961e9c8, msec=1000) at /home/wangl40/workspace/soe/include/util.h:436
+        ret = <optimized out>
+        now = {tv_sec = 1535204570, tv_usec = 122670}
+        wait_time = {tv_sec = 1535204571, tv_nsec = 122670000}
+#4  0x000055d9292f3681 in worker_routine (arg=0x55d92961e850) at ../lib/work.c:132
+        wi = 0x55d92961e850
+        work = 0x55d92961e440
+        tid = 24062
+        __func__ = "worker_routine"
+#5  0x000055d9292f3c53 in thread_starter (arg=0x55d92961ea30) at ../lib/work.c:301
+        args = 0x55d92961ea30
+        ret = 0x7fae17d18000
+#6  0x00007fae178e26db in start_thread (arg=0x7fae16fe9700) at pthread_create.c:463
+        pd = 0x7fae16fe9700
+        now = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140385686820608, -2837393895444849596, 140385686814592, 0, 94391190546992, 140724318347072, 2865310491409243204, 2865312275158391876}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#7  0x00007fae1760b88f in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+No locals.
+
+Thread 1 (Thread 0x7fae17d15780 (LWP 24025)):
+#0  0x00007fae175ce6c2 in __GI___waitpid (pid=24256, stat_loc=stat_loc@entry=0x7ffceee17588, options=options@entry=0) at ../sysdeps/unix/sysv/linux/waitpid.c:30
+        resultvar = 18446744073709551104
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+#1  0x00007fae17539067 in do_system (line=<optimized out>) at ../sysdeps/posix/system.c:149
+        __result = <optimized out>
+        _buffer = {__routine = 0x7fae17539360 <cancel_handler>, __arg = 0x7ffceee1758c, __canceltype = 1, __prev = 0x0}
+        _avail = 1
+        status = -287214212
+        save = <optimized out>
+        pid = 24256
+        sa = {__sigaction_handler = {sa_handler = 0x1, sa_sigaction = 0x1}, sa_mask = {__val = {65536, 0 <repeats 15 times>}}, sa_flags = 0, sa_restorer = 0x0}
+        omask = {__val = {16386, 14233708320907638016, 2097152, 140724318337216, 140385700628264, 24025, 140724318336784, 140385692479455, 206158430256, 140724316239624, 140724316239408, 14233708320907638016, 140724316239564, 140724318336784, 140385696179440, 140385700628264}}
+        __cnt = <optimized out>
+        __set = <optimized out>
+#2  0x000055d9292f9e58 in gdb_cmd (cmd=0x55d9292fdf5f "thread apply all where full") at ../lib/logger.c:692
+        time_str = "Aug 25 13:42:50 ", '\000' <repeats 200 times>...
+        cmd_str = <error reading variable cmd_str (value requires 2097152 bytes, which is more than max-value-size)>
+        ti = 1535204570
+        tm = {tm_sec = 50, tm_min = 42, tm_hour = 13, tm_mday = 25, tm_mon = 7, tm_year = 118, tm_wday = 6, tm_yday = 236, tm_isdst = 0, tm_gmtoff = 0, tm_zone = 0x55d9295f9720 "UTC"}
+        __func__ = "gdb_cmd"
+#3  0x000055d9292f9efc in dump_stack_frames () at ../lib/logger.c:706
+No locals.
+#4  0x000055d9292fa14f in soe_backtrace () at ../lib/logger.c:757
+        addrs = {0x55d9292f9f35 <soe_backtrace+55>, 0x55d9292f1fe4 <crash_handler+125>, 0x7fae178ed890 <__restore_rt>, 0x7fae1760bbb7 <epoll_wait+87>, 0x55d9292fab20 <do_event_loop+52>, 0x55d9292fac89 <event_loop+26>, 0x55d9292f2c71 <main+1946>, 0x7fae1750bb97 <__libc_start_main+231>, 0x55d9292ee15a <_start+42>, 0x0, 0x7ffcef017d10, 0x7fae17b1170a <_dl_runtime_resolve_xsave+138>, 0x7fae178d5ca0 <main_arena+96>, 0x7fae178d6460 <main_arena+2080>, 0x7fae1757ad60 <_dl_tunable_set_mallopt_check>, 0x7fae178d5038, 0x7ffcef017e00, 0x7fae178d1ee0 <_IO_mem_jumps>, 0xffffffffffffef28, 0x0, 0x55d9292fdddf, 0x7fae17b09ec3 <_dl_fixup+211>, 0x1, 0x0, 0x7fae178d8968 <fork_handler_pool+8>, 0x7fae174f0f00, 0x7ffcef017d90, 0x7fae17b1170a <_dl_runtime_resolve_xsave+138>, 0xd68, 0x780, 0x7fae178d1760 <_IO_helper_jumps>, 0x38, 0x55d9295f74b0, 0x0, 0x0, 0x1, 0x0, 0xc5884a4df038b500, 0x7ffcef017a90, 0xffff00001f80, 0x7ffcef017bc0, 0x55d9295fa74b, 0x55d9295fa74b, 0x7ffcef017ce4, 0x7fae1769f204, 0x7fae1756b79d <_IO_vsscanf+125>, 0x55d9fbad8001, 0x55d9295fa74c, 0x55d9295fa74c, 0x55d9295fa74b, 0x55d9295fa74b, 0x55d9295fa74b, 0x55d9295fa74b, 0x55d9295fa74b, 0x55d9295fa74c, 0x0, 0x2525252525252525, 0x2525252525252525, 0x0, 0xff0000, 0x0, 0x0, 0x7fae178d5c30 <__malloc_hook>, 0x7fae178d5c30 <__malloc_hook>, 0xe, 0xe, 0x0, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x400000004, 0x400000004, 0x697020726567676f, 0x6174732064252064, 0x0 <repeats 14 times>, 0x7fae178d2b40 <_nl_C_LC_TIME>, 0x7ffcef017dd7, 0x55d9295f9720, 0x2, 0x7ffc00000002, 0x7ffcef017ce4, 0x0, 0x7fae175bea88 <__tzfile_read+824>, 0x8, 0x1007fae00000001, 0x5, 0x4, 0x2, 0x0 <repeats 18 times>, 0xc5884a4df038b500, 0x0, 0x55d9295f74a0, 0x7fae178d5c40 <main_arena>, 0x55d9295f94b0, 0x0, 0x40, 0x2010, 0x7fae1757f79e <_int_realloc+190>, 0x0, 0x0, 0x55d9295f74b0, 0x38, 0x55d9295f74a0, 0xffffffffffffef28, 0x40, 0x7fae17582880 <realloc_hook_ini+240>, 0x0, 0x7fae178d5c40 <main_arena>, 0x0, 0x55d9295f7260, 0x7ffcef017e00, 0xc5884a4df038b500, 0xffffffffffffef28, 0x55d9295f7260, 0x0, 0xc5884a4df038b500, 0xffffffffffffef28, 0x1, 0x55d9295f7260, 0x14, 0xffffffffffffef28, 0x0, 0x55d9292fdddf, 0x7fae1760408d <__syslog+829>, 0x0, 0x5b815c5d, 0x55d9295f74b0, 0x37, 0x280000002d, 0x190000000d, 0x7600000007, 0xec00000006, 0x0, 0x0, 0x55d9295f9720, 0x3000000018, 0x7ffcef017fb0, 0x7ffcef017ec0, 0x0 <repeats 11 times>, 0xc5884a4df038b500, 0x0, 0x0, 0x5de9, 0x0, 0x7fae17d15780, 0x7fae178d5240 <pa_next_type>, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7fae178d8968 <fork_handler_pool+8>, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xc5884a4df038b500, 0x0, 0x0, 0x7ffcef01a0f0, 0x55d9292ee130 <_start>, 0x7ffcef01b3e0, 0x0, 0x0, 0x55d9292f9ada <log_init+497>, 0x2, 0x7ffcef01a2f0, 0x6...}
+        i = 9
+        n = 9
+        __func__ = "soe_backtrace"
+#5  0x000055d9292f1fe4 in crash_handler (signo=6, info=0x7ffcef019bf0, context=0x7ffcef019ac0) at client.c:1303
+        __func__ = "crash_handler"
+#6  <signal handler called>
+No locals.
+#7  0x00007fae1760bbb7 in epoll_wait (epfd=5, events=0x55d9295f9730, maxevents=256, timeout=-1) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+        resultvar = 18446744073709551612
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+#8  0x000055d9292fab20 in do_event_loop (timeout=-1, sort_with_prio=false) at ../lib/event.c:193
+        i = 1
+        nr = 1
+        __PRETTY_FUNCTION__ = "do_event_loop"
+        __func__ = "do_event_loop"
+#9  0x000055d9292fac89 in event_loop (timeout=-1) at ../lib/event.c:217
+No locals.
+#10 0x000055d9292f2c71 in main (argc=8, argv=0x7ffcef01b3e8) at client.c:1676
+        h_soe = 0x55d92961e4c0
+        daemonize = false
+        long_options = 0x55d929502840 <lopts>
+        short_options = 0x55d929502720 <sopts> "t:p:r:l:hf"
+        fd = {0, 0}
+        kfd = <optimized out>
+        i = 8
+        off = 48
+        cmdline = "/usr/sbin/soe_map -p 0 -r 0 -t 192.168.1.245 -f ", '\000' <repeats 207 times>
+        logdir_st = {st_dev = 0, st_ino = 0, st_nlink = 0, st_mode = 0, st_uid = 0, st_gid = 0, __pad0 = 0, st_rdev = 0, st_size = 0, st_blksize = 0, st_blocks = 0, st_atim = {tv_sec = 0, tv_nsec = 0}, st_mtim = {tv_sec = 0, tv_nsec = 0}, st_ctim = {tv_sec = 0, tv_nsec = 0}, __glibc_reserved = {0, 0, 0}}
+        ch = -1
+        longindex = 0
+        ret = 0
+        log_dst_type = LOG_DST_DEFAULT
+        localport = 0
+        remoteport = 0
+        targetip = 0x7ffcef01c782 "192.168.1.245"
+        log_path = "/var/log/soe_port0.log", '\000' <repeats 930 times>...
+        __func__ = "main"
+
+==
+== Aug 25 13:42:50 
+== program: /usr/sbin/soe_map
+== command: p __sys
+==
+$1 = {status = 0}
+
+==
+== Aug 25 13:43:42 
+== program: /usr/sbin/soe_map
+== command: thread apply all where full
+==
+
+Thread 5 (Thread 0x7fadd6cd3700 (LWP 24277)):
+#0  0x00007fadd8abb9d0 in __GI___nanosleep (requested_time=requested_time@entry=0x7fadd6cd1e30, remaining=remaining@entry=0x0) at ../sysdeps/unix/sysv/linux/nanosleep.c:28
+        resultvar = 18446744073709551100
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+#1  0x00007fadd8aee877 in usleep (useconds=<optimized out>) at ../sysdeps/posix/usleep.c:32
+        ts = {tv_sec = 0, tv_nsec = 500000000}
+#2  0x0000556fd1323ddd in soe_ping_thread (arg=0x556fd2ecd4c0) at client.c:640
+        h_soe = 0x556fd2ecd4c0
+        __func__ = "soe_ping_thread"
+#3  0x0000556fd1327c53 in thread_starter (arg=0x556fd2ed0920) at ../lib/work.c:301
+        args = 0x556fd2ed0920
+        ret = 0x0
+#4  0x00007fadd8dcf6db in start_thread (arg=0x7fadd6cd3700) at pthread_create.c:463
+        pd = 0x7fadd6cd3700
+        now = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140384609842944, 5114396607738786326, 140384609836928, 0, 93938768480544, 140726627405984, -5070401152152260074, -5070405396372409834}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#5  0x00007fadd8af888f in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+No locals.
+
+Thread 4 (Thread 0x7fadd74d4700 (LWP 24276)):
+#0  0x00007fadd8dd5f85 in futex_abstimed_wait_cancelable (private=<optimized out>, abstime=0x7fadd74d29f0, expected=0, futex_word=0x556fd2ecd538) at ../sysdeps/unix/sysv/linux/futex-internal.h:205
+        __ret = -516
+        oldtype = 0
+        err = <optimized out>
+        oldtype = <optimized out>
+        err = <optimized out>
+        __ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __pthread_cond_wait_common (abstime=0x7fadd74d29f0, mutex=0x556fd2ecd540, cond=0x556fd2ecd510) at pthread_cond_wait.c:539
+        spin = 0
+        buffer = {__routine = 0x7fadd8dd5690 <__condvar_cleanup_waiting>, __arg = 0x7fadd74d2950, __canceltype = 40, __prev = 0x0}
+        cbuffer = {wseq = 0, cond = 0x556fd2ecd510, mutex = 0x556fd2ecd540, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = <optimized out>
+        seq = 0
+        private = <optimized out>
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        rt = <optimized out>
+        s = <optimized out>
+#2  __pthread_cond_timedwait (cond=0x556fd2ecd510, mutex=0x556fd2ecd540, abstime=0x7fadd74d29f0) at pthread_cond_wait.c:667
+No locals.
+#3  0x0000556fd132255a in soe_cond_wait_timeout (cond=0x556fd2ecd510, mutex=0x556fd2ecd540, msec=1000) at /home/wangl40/workspace/soe/include/util.h:436
+        ret = <optimized out>
+        now = {tv_sec = 1535204621, tv_usec = 931396}
+        wait_time = {tv_sec = 1535204622, tv_nsec = 931396000}
+#4  0x0000556fd1323f3e in soe_intr_thread (arg=0x556fd2ecd4c0) at client.c:666
+        ret = 110
+        cnt = 0
+        len = 0
+        rsp = {magic = 3420388028, seq = 0, opcode = 11 '\v', line = 0 '\000', readlen = 0, len = 0, flags = 0, result = 0}
+        h_soe = 0x556fd2ecd4c0
+        iocnt = {rxcnt = 3420388028, txcnt = 0, errwrite = 11, errread = 0, errothers = 0}
+        read_buf = '\000' <repeats 1023 times>
+        __func__ = "soe_intr_thread"
+#5  0x0000556fd1327c53 in thread_starter (arg=0x556fd2ed07a0) at ../lib/work.c:301
+        args = 0x556fd2ed07a0
+        ret = 0x0
+#6  0x00007fadd8dcf6db in start_thread (arg=0x7fadd74d4700) at pthread_create.c:463
+        pd = 0x7fadd74d4700
+        now = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140384618235648, 5114396607738786326, 140384618229632, 0, 93938768480160, 140726627405984, -5070400052103761386, -5070405396372409834}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#7  0x00007fadd8af888f in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+No locals.
+
+Thread 3 (Thread 0x7fadd7cd5700 (LWP 24275)):
+#0  0x00007fadd8dd5f85 in futex_abstimed_wait_cancelable (private=<optimized out>, abstime=0x7fadd7cd3e20, expected=0, futex_word=0x556fd2ecdd40) at ../sysdeps/unix/sysv/linux/futex-internal.h:205
+        __ret = -516
+        oldtype = 0
+        err = <optimized out>
+        oldtype = <optimized out>
+        err = <optimized out>
+        __ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __pthread_cond_wait_common (abstime=0x7fadd7cd3e20, mutex=0x556fd2ecdd48, cond=0x556fd2ecdd18) at pthread_cond_wait.c:539
+        spin = 0
+        buffer = {__routine = 0x7fadd8dd5690 <__condvar_cleanup_waiting>, __arg = 0x7fadd7cd3d80, __canceltype = 0, __prev = 0x0}
+        cbuffer = {wseq = 100, cond = 0x556fd2ecdd18, mutex = 0x556fd2ecdd48, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = <optimized out>
+        seq = 50
+        private = <optimized out>
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        rt = <optimized out>
+        s = <optimized out>
+#2  __pthread_cond_timedwait (cond=0x556fd2ecdd18, mutex=0x556fd2ecdd48, abstime=0x7fadd7cd3e20) at pthread_cond_wait.c:667
+No locals.
+#3  0x0000556fd1327094 in soe_cond_wait_timeout (cond=0x556fd2ecdd18, mutex=0x556fd2ecdd48, msec=1000) at /home/wangl40/workspace/soe/include/util.h:436
+        ret = <optimized out>
+        now = {tv_sec = 1535204621, tv_usec = 931412}
+        wait_time = {tv_sec = 1535204622, tv_nsec = 931412000}
+#4  0x0000556fd1327681 in worker_routine (arg=0x556fd2ecdbd0) at ../lib/work.c:132
+        wi = 0x556fd2ecdbd0
+        work = 0x0
+        tid = 24275
+        __func__ = "worker_routine"
+#5  0x0000556fd1327c53 in thread_starter (arg=0x556fd2ecddd0) at ../lib/work.c:301
+        args = 0x556fd2ecddd0
+        ret = 0x0
+#6  0x00007fadd8dcf6db in start_thread (arg=0x7fadd7cd5700) at pthread_create.c:463
+        pd = 0x7fadd7cd5700
+        now = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140384626628352, 5114396607738786326, 140384626622336, 0, 93938768469456, 140726627405888, -5070398952055262698, -5070405396372409834}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#7  0x00007fadd8af888f in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+No locals.
+
+Thread 2 (Thread 0x7fadd84d6700 (LWP 24272)):
+#0  0x00007fadd8dd5f85 in futex_abstimed_wait_cancelable (private=<optimized out>, abstime=0x7fadd84d4e20, expected=0, futex_word=0x556fd2ecd9c0) at ../sysdeps/unix/sysv/linux/futex-internal.h:205
+        __ret = -516
+        oldtype = 0
+        err = <optimized out>
+        oldtype = <optimized out>
+        err = <optimized out>
+        __ret = <optimized out>
+        resultvar = <optimized out>
+        __arg6 = <optimized out>
+        __arg5 = <optimized out>
+        __arg4 = <optimized out>
+        __arg3 = <optimized out>
+        __arg2 = <optimized out>
+        __arg1 = <optimized out>
+        _a6 = <optimized out>
+        _a5 = <optimized out>
+        _a4 = <optimized out>
+        _a3 = <optimized out>
+        _a2 = <optimized out>
+        _a1 = <optimized out>
+#1  __pthread_cond_wait_common (abstime=0x7fadd84d4e20, mutex=0x556fd2ecd9c8, cond=0x556fd2ecd998) at pthread_cond_wait.c:539
+        spin = 0
+        buffer = {__routine = 0x7fadd8dd5690 <__condvar_cleanup_waiting>, __arg = 0x7fadd84d4d80, __canceltype = 0, __prev = 0x0}
+        cbuffer = {wseq = 0, cond = 0x556fd2ecd998, mutex = 0x556fd2ecd9c8, private = 0}
+        err = <optimized out>
+        g = 0
+        flags = <optimized out>
+        g1_start = <optimized out>
+        maxspin = 0
+        signals = <optimized out>
+        result = 0
+        wseq = <optimized out>
+        seq = 0
+        private = <optimized out>
+        maxspin = <optimized out>
+        err = <optimized out>
+        result = <optimized out>
+        wseq = <optimized out>
+        g = <optimized out>
+        seq = <optimized out>
+        flags = <optimized out>
+        private = <optimized out>
+        signals = <optimized out>
+        g1_start = <optimized out>
+        spin = <optimized out>
+        buffer = <optimized out>
+        cbuffer = <optimized out>
+        rt = <optimized out>
+        s = <optimized out>
+#2  __pthread_cond_timedwait (cond=0x556fd2ecd998, mutex=0x556fd2ecd9c8, abstime=0x7fadd84d4e20) at pthread_cond_wait.c:667
+No locals.
+#3  0x0000556fd1327094 in soe_cond_wait_timeout (cond=0x556fd2ecd998, mutex=0x556fd2ecd9c8, msec=1000) at /home/wangl40/workspace/soe/include/util.h:436
+        ret = <optimized out>
+        now = {tv_sec = 1535204622, tv_usec = 599924}
+        wait_time = {tv_sec = 1535204623, tv_nsec = 599924000}
+#4  0x0000556fd1327681 in worker_routine (arg=0x556fd2ecd850) at ../lib/work.c:132
+        wi = 0x556fd2ecd850
+        work = 0x556fd2ecd440
+        tid = 24272
+        __func__ = "worker_routine"
+#5  0x0000556fd1327c53 in thread_starter (arg=0x556fd2ecda30) at ../lib/work.c:301
+        args = 0x556fd2ecda30
+        ret = 0x7fadd9205000
+#6  0x00007fadd8dcf6db in start_thread (arg=0x7fadd84d6700) at pthread_create.c:463
+        pd = 0x7fadd84d6700
+        now = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140384635021056, 5114396607738786326, 140384635015040, 0, 93938768468528, 140726627405888, -5070406648099786218, -5070405396372409834}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+#7  0x00007fadd8af888f in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+No locals.
+
+Thread 1 (Thread 0x7fadd9202780 (LWP 24270)):
+#0  0x00007fadd8abb6c2 in __GI___waitpid (pid=24309, stat_loc=stat_loc@entry=0x7ffd7882e688, options=options@entry=0) at ../sysdeps/unix/sysv/linux/waitpid.c:30
+        resultvar = 18446744073709551104
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+#1  0x00007fadd8a26067 in do_system (line=<optimized out>) at ../sysdeps/posix/system.c:149
+        __result = <optimized out>
+        _buffer = {__routine = 0x7fadd8a26360 <cancel_handler>, __arg = 0x7ffd7882e68c, __canceltype = 1, __prev = 0x0}
+        _avail = 1
+        status = 2021844604
+        save = <optimized out>
+        pid = 24309
+        sa = {__sigaction_handler = {sa_handler = 0x1, sa_sigaction = 0x1}, sa_mask = {__val = {65536, 0 <repeats 15 times>}}, sa_flags = 0, sa_restorer = 0x0}
+        omask = {__val = {16386, 8710295080057615104, 2097152, 140726627396032, 140384648828712, 24270, 140726627395600, 140384640679903, 206158430256, 140726625298440, 140726625298224, 8710295080057615104, 140726625298380, 140726627395600, 140384644379888, 140384648828712}}
+        __cnt = <optimized out>
+        __set = <optimized out>
+#2  0x0000556fd132de58 in gdb_cmd (cmd=0x556fd1331f5f "thread apply all where full") at ../lib/logger.c:692
+        time_str = "Aug 25 13:43:42 ", '\000' <repeats 200 times>...
+        cmd_str = <error reading variable cmd_str (value requires 2097152 bytes, which is more than max-value-size)>
+        ti = 1535204622
+        tm = {tm_sec = 42, tm_min = 43, tm_hour = 13, tm_mday = 25, tm_mon = 7, tm_year = 118, tm_wday = 6, tm_yday = 236, tm_isdst = 0, tm_gmtoff = 0, tm_zone = 0x556fd2ea8720 "UTC"}
+        __func__ = "gdb_cmd"
+#3  0x0000556fd132defc in dump_stack_frames () at ../lib/logger.c:706
+No locals.
+#4  0x0000556fd132e14f in soe_backtrace () at ../lib/logger.c:757
+        addrs = {0x556fd132df35 <soe_backtrace+55>, 0x556fd1325fe4 <crash_handler+125>, 0x7fadd8dda890 <__restore_rt>, 0x7fadd8af8bb7 <epoll_wait+87>, 0x556fd132eb20 <do_event_loop+52>, 0x556fd132ec89 <event_loop+26>, 0x556fd1326c71 <main+1946>, 0x7fadd89f8b97 <__libc_start_main+231>, 0x556fd132215a <_start+42>, 0x0, 0x7ffd78a2ee10, 0x7fadd8ffe70a <_dl_runtime_resolve_xsave+138>, 0x7fadd8dc2ca0 <main_arena+96>, 0x7fadd8dc3460 <main_arena+2080>, 0x7fadd8a67d60 <_dl_tunable_set_mallopt_check>, 0x7fadd8dc2038, 0x7ffd78a2ef00, 0x7fadd8dbeee0 <_IO_mem_jumps>, 0xffffffffffffef28, 0x0, 0x556fd1331ddf, 0x7fadd8ff6ec3 <_dl_fixup+211>, 0x1, 0x0, 0x7fadd8dc5968 <fork_handler_pool+8>, 0x7fadd89ddf00, 0x7ffd78a2ee90, 0x7fadd8ffe70a <_dl_runtime_resolve_xsave+138>, 0xd68, 0x780, 0x7fadd8dbe760 <_IO_helper_jumps>, 0x38, 0x556fd2ea64b0, 0x0, 0x0, 0x1, 0x0, 0x78e12f39e7aab300, 0x7ffd78a2eb90, 0xffff00001f80, 0x7ffd78a2ecc0, 0x556fd2ea974b, 0x556fd2ea974b, 0x7ffd78a2ede4, 0x7fadd8b8c204, 0x7fadd8a5879d <_IO_vsscanf+125>, 0x556ffbad8001, 0x556fd2ea974c, 0x556fd2ea974c, 0x556fd2ea974b, 0x556fd2ea974b, 0x556fd2ea974b, 0x556fd2ea974b, 0x556fd2ea974b, 0x556fd2ea974c, 0x0, 0x2525252525252525, 0x2525252525252525, 0x0, 0xff0000, 0x0, 0x0, 0x7fadd8dc2c30 <__malloc_hook>, 0x7fadd8dc2c30 <__malloc_hook>, 0xe, 0xe, 0x0, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x400000004, 0x400000004, 0x697020726567676f, 0x6174732064252064, 0x0 <repeats 14 times>, 0x7fadd8dbfb40 <_nl_C_LC_TIME>, 0x7ffd78a2eed7, 0x556fd2ea8720, 0x2, 0x7ffd00000002, 0x7ffd78a2ede4, 0x0, 0x7fadd8aaba88 <__tzfile_read+824>, 0x8, 0x1007fad00000001, 0x5, 0x4, 0x2, 0x0 <repeats 18 times>, 0x78e12f39e7aab300, 0x0, 0x556fd2ea64a0, 0x7fadd8dc2c40 <main_arena>, 0x556fd2ea84b0, 0x0, 0x40, 0x2010, 0x7fadd8a6c79e <_int_realloc+190>, 0x0, 0x0, 0x556fd2ea64b0, 0x38, 0x556fd2ea64a0, 0xffffffffffffef28, 0x40, 0x7fadd8a6f880 <realloc_hook_ini+240>, 0x0, 0x7fadd8dc2c40 <main_arena>, 0x0, 0x556fd2ea6260, 0x7ffd78a2ef00, 0x78e12f39e7aab300, 0xffffffffffffef28, 0x556fd2ea6260, 0x0, 0x78e12f39e7aab300, 0xffffffffffffef28, 0x1, 0x556fd2ea6260, 0x14, 0xffffffffffffef28, 0x0, 0x556fd1331ddf, 0x7fadd8af108d <__syslog+829>, 0x0, 0x5b815cdb, 0x556fd2ea64b0, 0x37, 0x2a00000033, 0x190000000d, 0x7600000007, 0xec00000006, 0x0, 0x0, 0x556fd2ea8720, 0x3000000018, 0x7ffd78a2f0b0, 0x7ffd78a2efc0, 0x0 <repeats 11 times>, 0x78e12f39e7aab300, 0x0, 0x0, 0x5ecf, 0x0, 0x7fadd9202780, 0x7fadd8dc2240 <pa_next_type>, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7fadd8dc5968 <fork_handler_pool+8>, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x78e12f39e7aab300, 0x0, 0x0, 0x7ffd78a311f0, 0x556fd1322130 <_start>, 0x7ffd78a324e0, 0x0, 0x0, 0x556fd132dada <log_init+497>, 0x2, 0x7ffd78a313f0, 0x6...}
+        i = 9
+        n = 9
+        __func__ = "soe_backtrace"
+#5  0x0000556fd1325fe4 in crash_handler (signo=6, info=0x7ffd78a30cf0, context=0x7ffd78a30bc0) at client.c:1303
+        __func__ = "crash_handler"
+#6  <signal handler called>
+No locals.
+#7  0x00007fadd8af8bb7 in epoll_wait (epfd=5, events=0x556fd2ea8730, maxevents=256, timeout=-1) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+        resultvar = 18446744073709551612
+        sc_cancel_oldtype = 0
+        sc_ret = <optimized out>
+#8  0x0000556fd132eb20 in do_event_loop (timeout=-1, sort_with_prio=false) at ../lib/event.c:193
+        i = 1
+        nr = 1
+        __PRETTY_FUNCTION__ = "do_event_loop"
+        __func__ = "do_event_loop"
+#9  0x0000556fd132ec89 in event_loop (timeout=-1) at ../lib/event.c:217
+No locals.
+#10 0x0000556fd1326c71 in main (argc=8, argv=0x7ffd78a324e8) at client.c:1676
+        h_soe = 0x556fd2ecd4c0
+        daemonize = false
+        long_options = 0x556fd1536840 <lopts>
+        short_options = 0x556fd1536720 <sopts> "t:p:r:l:hf"
+        fd = {0, 0}
+        kfd = <optimized out>
+        i = 8
+        off = 48
+        cmdline = "/usr/sbin/soe_map -p 0 -r 0 -t 192.168.1.245 -f ", '\000' <repeats 207 times>
+        logdir_st = {st_dev = 0, st_ino = 0, st_nlink = 0, st_mode = 0, st_uid = 0, st_gid = 0, __pad0 = 0, st_rdev = 0, st_size = 0, st_blksize = 0, st_blocks = 0, st_atim = {tv_sec = 0, tv_nsec = 0}, st_mtim = {tv_sec = 0, tv_nsec = 0}, st_ctim = {tv_sec = 0, tv_nsec = 0}, __glibc_reserved = {0, 0, 0}}
+        ch = -1
+        longindex = 0
+        ret = 0
+        log_dst_type = LOG_DST_DEFAULT
+        localport = 0
+        remoteport = 0
+        targetip = 0x7ffd78a33782 "192.168.1.245"
+        log_path = "/var/log/soe_port0.log", '\000' <repeats 930 times>...
+        __func__ = "main"
+
+==
+== Aug 25 13:43:43 
+== program: /usr/sbin/soe_map
+== command: p __sys
+==
+$1 = {status = 0}

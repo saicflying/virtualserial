@@ -1,0 +1,15 @@
+
+#cmake mini version required
+
+cmake_minimum_required(VERSION 2.8)
+
+PROJECT(SOE)
+
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include)
+
+SET(CMAKE_BUILD_TYPE "Debug")
+set(CMAKE_C_FLAGS "-std=gnu99 ${CMAKE_C_FLAGS}")
+
+ADD_DEFINITIONS(-D_GNU_SOURCE)
+ADD_SUBDIRECTORY(server)
+ADD_SUBDIRECTORY(soe_map)

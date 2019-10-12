@@ -1,0 +1,90 @@
+#ifndef __WORK_H__
+#define __WORK_H__
+
+#include <stdbool.h>
+
+#include "list.h"
+#include "util.h"
+#include "logger.h"
+
+struct work;
+
+typedef void (*work_func_t)(struct work *);
+
+struct work {
+	struct list_node w_list;
+	void * priv;
+	int prio;
+	work_func_t fn;
+	work_func_t done;
+};
+
+struct work_queue {
+	int wq_state;
+	struct list_head pending_list;
+};
+
+enum wq_thread_control {
+	WQ_ORDERED, /* Only 1 thread created for work queue */
+	WQ_DYNAMIC, /* # of threads proportional to nr_nodes created */
+	WQ_FIXED, /* Fixed # of threads created */
+};
+
+static inline bool is_main_thread(void)
+{
+	return gettid() == getpid();
+}
+
+static inline bool is_worker_thread(void)
+{
+	return !is_main_thread();
+}
+
+/*
+ * Helper macros to guard variables from being accessed out of the
+ * main thread.  Note that we can use these only for pointers.
+ */
+#define main_thread(type) struct { type __val; }
+#define main_thread_get(var)			\
+({						\
+	assert(is_main_thread());		\
+	(var).__val;				\
+})
+#define main_thread_set(var, val)		\
+({						\
+	assert(is_main_thread());		\
+	(var).__val = (val);			\
+})
+
+/*
+ * 'get_nr_nodes' is the function to get the current number of nodes and used
+ * for dynamic work queues.  'create_cb' will be called when worker threads are
+ * created and 'destroy_cb' will be called when worker threads are destroyed.
+ */
+int init_work_queue(void);
+void cleanup_queue(void);
+
+struct work_queue *create_work_queue(const char *name);
+void destroy_queue(struct work_queue * queueu);
+
+struct work * alloc_work(void *priv, int prio);
+void   dump_works(void);
+void   destroy_work(struct work * work);
+
+int queue_work(struct work_queue *q, struct work *work);
+bool work_queue_empty(struct work_queue *q);
+
+typedef struct soe_thread_info {
+	pthread_t thread;
+	struct list_node list;	
+} *soe_thread_info_t;
+
+int soe_thread_create(const char *, soe_thread_info_t *, void *(*start_routine)(void *), void *);
+int soe_thread_create_with_idx(const char *,soe_thread_info_t *, void *(*start_routine)(void *), void *);
+void soe_thread_join(soe_thread_info_t);
+void soe_threads_join(void);
+int  soe_thread_should_stop(void);
+void soe_stop_thread(void);
+uint64_t get_msec_time(void);
+
+#endif
